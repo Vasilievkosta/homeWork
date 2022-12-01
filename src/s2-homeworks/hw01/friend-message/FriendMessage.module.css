@@ -26,15 +26,27 @@
     border-radius: 5px;
     transform: scale(-1, 1);
     margin-left: 15px;
+	border-radius: 10px 10px 0 10px;	
+	position: relative;
 }
 
-.friendText:after {}
+.friendText:after {
+	content: '';
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	bottom: 0;
+	right: -15px;	
+	background: radial-gradient(circle at 100% 0, rgba(255,255,255,0) 15px, rgba(0,102,204,1) 0);
+}
 
 .friendName {
     font-weight: 600;
 }
 
-.friendMessageText {}
+.friendMessageText {
+	white-space: pre-wrap;	
+}
 
 .friendTime {
     font-weight: 600;

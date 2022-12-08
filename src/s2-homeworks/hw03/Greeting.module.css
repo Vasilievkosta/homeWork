@@ -1,4 +1,8 @@
-.greetingForm {}
+.greetingForm {
+    display: flex;
+    gap: 24px;
+    margin: 35px 70px;
+}
 
 .inputAndButtonContainer {}
 
@@ -14,11 +18,29 @@
     border: 1px solid red;
 }
 
-.button {}
+.button {
+    padding: 5px 15px;
+
+    background: transparent;
+    color: var(--color);
+
+    border: 1px solid var(--color);
+    border-radius: 15px;
+    outline: none;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+}
 
 .button:focus {}
 
-.button:active {}
+.button:active {
+    background: var(--color);
+    color: white;
+}
 
 .button:disabled {}
 

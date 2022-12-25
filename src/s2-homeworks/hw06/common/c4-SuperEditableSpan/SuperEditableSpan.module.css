@@ -1,11 +1,20 @@
 .spanBlock {
+    /* display: inline-block;
+    width: 276px; */
 }
 
 .span {
+    height: 20px;
+    padding-top: 10px;
+    cursor: pointer;
+    color: #77aaff;
+
 }
 
 .input {
+    /* border: none;     */
 }
 
 .pen {
+    margin-right: 25px;
 }

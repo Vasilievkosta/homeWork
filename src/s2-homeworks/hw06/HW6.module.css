@@ -1,5 +1,11 @@
-.buttonsContainer {
+.editableSpanContainer {
+	/* border: 2px solid green; */
+	padding: 35px 70px 10px;
+	width: 276px;
+
 }
 
-.editableSpanContainer {
+.buttonsContainer {
+	/* border: 2px solid blue; */
+	padding: 10px 70px;
 }

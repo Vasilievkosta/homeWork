@@ -57,10 +57,11 @@
 }
 
 .nav a.active {
-    /* color: #0059b2; */
-    color: red;
+    color: #0059b2;
     text-decoration: underline;
 }
+
+
 
 .close {
     position: absolute;

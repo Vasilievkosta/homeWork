@@ -17,7 +17,6 @@
 
 .label {
     cursor: pointer;
-    border: 1px solid #cecece;
     display: flex;
     margin: 5px;
     padding: 5px;

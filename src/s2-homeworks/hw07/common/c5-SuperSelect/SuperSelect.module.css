@@ -1,9 +1,23 @@
 .select {
+    width: 150px;
+    padding: 5px;
+    padding-right: 30px;
+    margin-right: 50px;
 }
 
 .select:focus {
+    outline: none;
+    border: #99ff99 solid 2px;
 }
 
 
+.option:checked {
+    background: #003300;
+    color: #99ff99;
+}
+
 .option:hover {
+    box-shadow: 0 0 10px 100px #fed2df inset;
+    transition: all .2s case-in-out;
+    background: red;
 }

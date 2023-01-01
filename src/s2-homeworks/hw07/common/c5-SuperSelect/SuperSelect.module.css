@@ -3,6 +3,17 @@
     padding: 5px;
     padding-right: 30px;
     margin-right: 50px;
+
+    cursor: pointer;
+    appearance: none;
+    background-color: #0066cc;
+    background-image: url(./chevron-down.svg);
+    background-repeat: no-repeat, repeat;
+    background-position: right .1em top 50%, 0 0;
+    background-size: 1.5em auto, 100%;
+    border: 2px inset rgb(118, 118, 118);
+    border-color: transparent;
+    color: #99ff99;
 }
 
 .select:focus {
@@ -10,14 +21,18 @@
     border: #99ff99 solid 2px;
 }
 
+.option {
+    color: #0066cc;
+    background-color: #99ff99;
+}
 
 .option:checked {
-    background: #003300;
+    background-color: #0066cc;
     color: #99ff99;
 }
 
 .option:hover {
     box-shadow: 0 0 10px 100px #fed2df inset;
     transition: all .2s case-in-out;
-    background: red;
+    background-color: red;
 }

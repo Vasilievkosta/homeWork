@@ -1,19 +1,32 @@
 .buttonsContainer {
+	margin: 30px 70px 60px;
 }
 
 .responseContainer {
+	margin: 0 140px;
+	display: flex;
 }
 
 .imageContainer {
+	margin-right: 100px;
 }
 
 .image {
 }
 
 .textContainer{
+	max-width: 450px;
+	margin: auto 0;
+	font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 500;    
 }
 
 .code {
+	font-size: 30px;
+	margin-bottom: 12px;
 }
 
 .text {

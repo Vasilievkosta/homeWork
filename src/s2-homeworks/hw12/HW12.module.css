@@ -19,5 +19,13 @@ html {
 }
 
 .select {
+    margin: 30px 70px;
+    background-color: transparent;
+    border-color: var(--color);
+    color: var(--color);
 
 }
+
+/* .select:focus {
+    border-color: var(--color);
+} */

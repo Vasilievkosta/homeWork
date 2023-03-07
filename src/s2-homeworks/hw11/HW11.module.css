@@ -1,8 +1,17 @@
 .container {
+    margin: 30px 70px;
 }
 
 .wrapper {
+    display: flex;
+    align-items: center;
 }
 
 .number {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 600;
+    min-width: 50px;
 }

@@ -21,7 +21,7 @@ const HW10 = () => {
     const isLoading = useSelector<AppStoreType, boolean>(state => state.loading.isLoading)
 
     const setLoading = () => { // пишет студент // показать крутилку на 1,5 секунд
-        // dispatch        
+        // dispatch
         dispatch(loadingAC(true))
         setInterval(() => dispatch(loadingAC(false)), 1500)
     }
@@ -31,19 +31,21 @@ const HW10 = () => {
             <div className={s2.hwTitle}>Homework #10</div>
 
             <div className={s2.hw}>
-                {isLoading ? (
-                    <div id={'hw10-loading'}>
+                <div style={{ margin: '30px 70px', minHeight: '100px' }}>
+                    {isLoading ? (
+                        <div id={'hw10-loading'}>
 
-                        <Loader />
-                    </div>
-                ) : (
-                    <SuperButton
-                        id={'hw10-button-start-loading'}
-                        onClick={setLoading}
-                    >
-                        Set loading...
-                    </SuperButton>
-                )}
+                            <Loader />
+                        </div>
+                    ) : (
+                        <SuperButton
+                            id={'hw10-button-start-loading'}
+                            onClick={setLoading}
+                        >
+                            Set loading...
+                        </SuperButton>
+                    )}
+                </div>
             </div>
         </div>
     )

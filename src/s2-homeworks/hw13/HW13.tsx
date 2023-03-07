@@ -34,14 +34,33 @@ const HW13 = () => {
         axios
             .post(url, {success: x})
             .then((res) => {
-                setCode('Код 200!')
+			
                 setImage(success200)
+				setCode('Код 200!')
                 // дописать
-
+				console.log(res)
+				setText(res.data.errorText)				
+				setInfo(res.data.info)
             })
             .catch((e) => {
                 // дописать
-
+				
+				setImage(e.response.status === 500 ? error500 : e.response.status === 400 ? error400 : errorUnknown)
+				
+				
+				if (e.response.status === 0) {
+				setCode('Error!')
+					console.log(e)
+					setText(e.message)
+					setInfo(e.name)
+				} else {				
+				setCode(`Ошибка ${e.response.status}!`)
+					setText(e.response.data.errorText)				
+				setInfo(e.response.data.info)
+				}				
+				
+				
+				
             })
     }
 
@@ -56,7 +75,7 @@ const HW13 = () => {
                         onClick={send(true)}
                         xType={'secondary'}
                         // дописать
-
+						disabled={info === '...loading'}
                     >
                         Send true
                     </SuperButton>
@@ -65,7 +84,7 @@ const HW13 = () => {
                         onClick={send(false)}
                         xType={'secondary'}
                         // дописать
-
+						disabled={info === '...loading'}
                     >
                         Send false
                     </SuperButton>
@@ -74,7 +93,7 @@ const HW13 = () => {
                         onClick={send(undefined)}
                         xType={'secondary'}
                         // дописать
-
+						disabled={info === '...loading'}
                     >
                         Send undefined
                     </SuperButton>
@@ -83,7 +102,7 @@ const HW13 = () => {
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
                         // дописать
-
+						disabled={info === '...loading'}
                     >
                         Send null
                     </SuperButton>

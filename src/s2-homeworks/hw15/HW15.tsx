@@ -48,7 +48,7 @@ const HW15 = () => {
     const [techs, setTechs] = useState<TechType[]>([])
 
     const sendQuery = (params: any) => {
-        console.log(params)
+
         setLoading(true)
         getTechs(params)
             .then((res) => {
@@ -69,14 +69,13 @@ const HW15 = () => {
         setPage(newPage)
         setCount(newCount)
         sendQuery({ page: newPage, count: newCount })
-        console.log(typeof String(newPage))
         setSearchParams({ page: String(newPage), count: String(newCount) })
 
     }
 
     const onChangeSort = (newSort: string) => {
         // делает студент
-        console.log(newSort)
+
         setSort(newSort)
         setPage(1) // при сортировке сбрасывать на 1 страницу
 
@@ -111,7 +110,10 @@ const HW15 = () => {
             <div className={s2.hwTitle}>Homework #15</div>
 
             <div className={s2.hw} >
+                {/* <div style={{ minHeight: '30px', margin: '10px 70px' }}> */}
                 {idLoading && <div id={'hw15-loading'} className={s.loading}>Loading...</div>}
+                {/* </div> */}
+
 
                 <SuperPagination
                     page={page}

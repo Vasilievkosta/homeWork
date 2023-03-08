@@ -1,9 +1,14 @@
-.tech, .loading {
+.tech,
+.loading {
 	margin-left: 70px;
+}
+
+.tech:last-child {
+	margin-bottom: 50px;
 }
 
 .superInput {
 	margin: 30px 70px 0;
 	max-width: 375px;
-	
+
 }

@@ -30,7 +30,7 @@ type ParamsType = {
 const getTechs = (params: ParamsType) => {
     return axios
         .get<{ techs: TechType[], totalCount: number }>(
-            'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test3',
+            'https://samurai.it-incubator.io/api/3.0/homework/test3',
             { params }
         )
         .catch((e) => {
@@ -48,7 +48,7 @@ const HW15 = () => {
     const [techs, setTechs] = useState<TechType[]>([])
 
     const sendQuery = (params: any) => {
-
+        console.log(params)
         setLoading(true)
         getTechs(params)
             .then((res) => {
@@ -68,8 +68,8 @@ const HW15 = () => {
         // делает студент        
         setPage(newPage)
         setCount(newCount)
-        sendQuery({ page: newPage, count: newCount })
-        setSearchParams({ page: String(newPage), count: String(newCount) })
+        sendQuery({ sort: sort, page: newPage, count: newCount })
+        setSearchParams(`?page=${newPage}$count=${newCount}`)
 
     }
 
@@ -79,8 +79,8 @@ const HW15 = () => {
         setSort(newSort)
         setPage(1) // при сортировке сбрасывать на 1 страницу
 
-        sendQuery({ sort: newSort })
-        setSearchParams({ sort: newSort })
+        sendQuery({ sort: newSort, page: page, count: count })
+        setSearchParams(`?sort=${newSort}`)
 
         //
     }
@@ -88,7 +88,7 @@ const HW15 = () => {
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
 
-        sendQuery({ page: params.page, count: params.count })
+        sendQuery({ sort: sort, page: params.page, count: params.count })
         setPage(+params.page || 1)
         setCount(+params.count || 4)
     }, [])
@@ -110,9 +110,9 @@ const HW15 = () => {
             <div className={s2.hwTitle}>Homework #15</div>
 
             <div className={s2.hw} >
-                {/* <div style={{ minHeight: '30px', margin: '10px 70px' }}> */}
-                {idLoading && <div id={'hw15-loading'} className={s.loading}>Loading...</div>}
-                {/* </div> */}
+                <div style={{ minHeight: '30px', margin: '10px 70px' }}>
+                    {idLoading && <div id={'hw15-loading'} className={s.loading}>Loading...</div>}
+                </div>
 
 
                 <SuperPagination

@@ -18,13 +18,14 @@ const SuperPagination: React.FC<SuperPaginationPropsType> = (
 ) => {
     const lastPage = Math.ceil(totalCount / itemsCountForPage) // пишет студент // вычислить количество страниц
 
-    const onChangeCallback = (event: React.ChangeEvent<unknown>, page: number) => {
-        // пишет студент        
+    const onChangeCallback = (event: any, page: number) => {
+        // пишет студент
+        // const num = event ? +event.currentTarget.value : itemsCountForPage
         onChange(page, itemsCountForPage)
     }
 
     const onChangeSelect = (event: ChangeEvent<HTMLSelectElement>) => {
-        // пишет студент
+        // пишет студент    
         onChange(1, +event.currentTarget.value)
     }
 
@@ -33,11 +34,12 @@ const SuperPagination: React.FC<SuperPaginationPropsType> = (
             <Pagination
                 id={id + '-pagination'}
                 sx={{
+
                     // стили для Pagination
                 }}
-                // variant="outlined"
-                // color="primary"
-                // shape="rounded"
+                variant="outlined"
+                color="primary"
+                shape="rounded"
                 // пишет студент
                 page={page}
                 count={lastPage}
@@ -45,25 +47,28 @@ const SuperPagination: React.FC<SuperPaginationPropsType> = (
                 hideNextButton
                 hidePrevButton
             />
+            <div>
+                <span className={s.text1}>
+                    показать
+                </span>
 
-            <span className={s.text1}>
-                показать
-            </span>
+                <SuperSelect
+                    id={id + '-pagination-select'}
+                    value={itemsCountForPage}
+                    options={[
+                        { id: 4, value: 4 },
+                        { id: 7, value: 7 },
+                        { id: 10, value: 10 },
+                    ]}
+                    onChange={onChangeSelect}
+                    className={s.classSuperSelect}
+                />
 
-            <SuperSelect
-                id={id + '-pagination-select'}
-                value={itemsCountForPage}
-                options={[
-                    { id: 4, value: 4 },
-                    { id: 7, value: 7 },
-                    { id: 10, value: 10 },
-                ]}
-                onChange={onChangeSelect}
-            />
+                <span className={s.text2}>
+                    строк в таблице
+                </span>
+            </div>
 
-            <span className={s.text2}>
-                строк в таблице
-            </span>
         </div>
     )
 }
